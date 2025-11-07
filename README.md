@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Stars](https://img.shields.io/github/stars/ahtashamd321/mental-health-social-media)
+![Issues](https://img.shields.io/github/issues/ahtashamd321/mental-health-social-media)
+
+
 # 🧠 Mental Health & Social Media Balance Analytics
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
