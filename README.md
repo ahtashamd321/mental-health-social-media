@@ -2,7 +2,8 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Stars](https://img.shields.io/github/stars/ahtashamd321/mental-health-social-media)
 ![Issues](https://img.shields.io/github/issues/ahtashamd321/mental-health-social-media)
-![Project Banner](assets/banner.png)
+![Project Banner](https://raw.githubusercontent.com/ahstashamd321/mental-health-social-media/main/assets/banner.png)
+
 
 
 # 🧠 Mental Health & Social Media Balance Analytics
