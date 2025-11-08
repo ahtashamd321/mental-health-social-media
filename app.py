@@ -624,7 +624,10 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666;'>
     <p>📊 Data Analysis Portfolio Project | Mental Health & Social Media Balance</p>
-    <p>Created by [Your Name] | Contact: [your.email@example.com]</p>
-    <p>🔗 GitHub | 💼 LinkedIn | 📝 Medium</p>
+    <p>Created by Ahtasham Anjum | Contact: ahtashamd321@gmail.com</p>
+    <p>🔗 <a href='https://github.com/ahtashamd321' target='_blank'>GitHub</a> |
+       💼 <a href='https://www.linkedin.com/in/ahtasham-anjum' target='_blank'>LinkedIn</a> |
+       📝 <a href='https://ahtashamd321.medium.com' target='_blank'>Medium</a>
+       </p>
 </div>
 """, unsafe_allow_html=True)
