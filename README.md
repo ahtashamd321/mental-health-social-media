@@ -16,7 +16,7 @@
 
 > **A comprehensive data science portfolio project analyzing the relationship between social media usage patterns and mental health indicators across 500 users.**
 
-[🔗 Live Dashboard](#) | [💼 LinkedIn Profile](https://linkedin.com/in/ahtasham-anjum) | [📊 Portfolio](https://datascienceportfol.io/ahtashamd321)
+[🔗 Live Dashboard](https://mental-health-social-media.streamlit.app/) | [💼 LinkedIn Profile](https://linkedin.com/in/ahtasham-anjum) | [📊 Portfolio](https://datascienceportfol.io/ahtashamd321)
 
 ---
 
