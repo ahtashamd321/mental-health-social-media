@@ -489,6 +489,65 @@ elif page == "🔍 Deep Dive":
         
         st.dataframe(exercise_stats, use_container_width=True)
     
+    elif analysis_type == "Stress Patterns":
+        st.subheader("Stress Level Analysis")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Stress distribution
+            fig = px.histogram(df, x='Stress_Level(1-10)', nbins=10,
+                             color_discrete_sequence=['#e74c3c'])
+            fig.add_vline(x=df['Stress_Level(1-10)'].mean(), 
+                         line_dash="dash", line_color="black",
+                         annotation_text=f"Mean: {df['Stress_Level(1-10)'].mean():.2f}")
+            fig.update_layout(height=400, title="Stress Level Distribution")
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with col2:
+            # Stress by platform
+            platform_stress = df.groupby('Social_Media_Platform')['Stress_Level(1-10)'].mean().sort_values(ascending=False)
+            fig = px.bar(x=platform_stress.values, y=platform_stress.index,
+                        orientation='h', color=platform_stress.values,
+                        color_continuous_scale='Reds')
+            fig.update_layout(height=400, title="Average Stress by Platform",
+                            xaxis_title="Stress Level", yaxis_title="Platform")
+            st.plotly_chart(fig, use_container_width=True)
+        
+        # Stress vs other factors
+        st.subheader("Stress Correlations")
+        
+        stress_factors = df[['Daily_Screen_Time(hrs)', 'Sleep_Quality(1-10)', 
+                            'Exercise_Frequency(week)', 'Days_Without_Social_Media',
+                            'Stress_Level(1-10)']].corr()['Stress_Level(1-10)'].drop('Stress_Level(1-10)')
+        
+        fig = px.bar(x=stress_factors.values, y=stress_factors.index,
+                    orientation='h', color=stress_factors.values,
+                    color_continuous_scale='RdYlGn_r')
+        fig.update_layout(height=300, title="Factors Associated with Stress",
+                        xaxis_title="Correlation", yaxis_title="Factor")
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # High stress profile
+        st.subheader("High Stress Profile")
+        high_stress = df[df['Stress_Level(1-10)'] >= 8]
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("% of Users", f"{len(high_stress)/len(df)*100:.1f}%")
+        with col2:
+            st.metric("Avg Screen Time", f"{high_stress['Daily_Screen_Time(hrs)'].mean():.1f} hrs")
+        with col3:
+            st.metric("Avg Happiness", f"{high_stress['Happiness_Index(1-10)'].mean():.1f}/10")
+        
+        st.info("""
+        **Key Findings:**
+        - High stress users (8+/10) represent a significant portion of the sample
+        - Strong negative correlation with sleep quality and happiness
+        - Screen time and stress show positive correlation
+        - Regular exercise and social media breaks help reduce stress
+        """)
+    
     elif analysis_type == "Optimal Combinations":
         st.subheader("Finding the Optimal Balance")
         
